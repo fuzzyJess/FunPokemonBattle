@@ -1,14 +1,17 @@
 class Pokemon {
     // properties
     #name = "";
-    #type = "normal"
+    #type = ""
     #hitPoints = 0;
     #damage = 0;
+    #move = "";
 
-    constructor (name, hp, damage) {
+    constructor (name, type = "normal", hp, damage, move = "tackle") {
         this.#name = name;
+        this.#type = type;
         this.#hitPoints = hp;
         this.#damage = damage;
+        this.#move = move;
     };
 
     // methods
@@ -18,16 +21,15 @@ class Pokemon {
     getType() {
         return this.#type;
     };
-    setType(newType) {
-        this.#type = newType;
-    };
     getHitPoints() {
         return this.#hitPoints;
     };
     getDamage() {
         return this.#damage;
     };
-          
+    getMove() {
+        return this.#move;
+    };    
 };
 
 module.exports = { Pokemon };

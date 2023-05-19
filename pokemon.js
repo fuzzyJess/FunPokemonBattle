@@ -3,9 +3,12 @@ class Pokemon {
     #name = "";
     #type = "normal"
     #hitPoints = 0;
-    constructor (name, hp) {
+    #damage = 0;
+
+    constructor (name, hp, damage) {
         this.#name = name;
         this.#hitPoints = hp;
+        this.#damage = damage;
     };
 
     // methods
@@ -20,8 +23,11 @@ class Pokemon {
     };
     getHitPoints() {
         return this.#hitPoints;
-    }
-    
+    };
+    getDamage() {
+        return this.#damage;
+    };
+          
 };
 
 module.exports = { Pokemon };

@@ -18,6 +18,10 @@ describe('Pokemon class', () => {
             const testPokemon = new Pokemon('Togademaru', 10);
             expect(testPokemon.getHitPoints()).toBe(10);
         });
+        test('Pokemon have a damage property', () => {
+            const testPokemon = new Pokemon('Flareon', 55, 18);
+            expect(testPokemon.getDamage()).toBe(18);
+        });
     });
     describe('Methods of Pokemon class', () => {
 

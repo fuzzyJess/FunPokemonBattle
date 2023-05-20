@@ -36,5 +36,13 @@ describe('Pokemon class', () => {
             expect(testPokemon3.isEffectiveAgainst(testPokemon2)).toBe(true);
             expect(testPokemon1.isEffectiveAgainst(testPokemon2)).toBe(false);
         });
+        test('Pokemon have a isWeakTo method', () => {
+            const testPokemon1 = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
+            const testPokemon2 = new Pokemon('Flareon', 'fire', 55, 18, 'Fire blast');
+            const testPokemon3 = new Pokemon('Vaporeon', 'water', 70, 19, 'hydro pump');
+            expect(testPokemon1.isWeakTo(testPokemon2)).toBe(true);
+            expect(testPokemon2.isWeakTo(testPokemon3)).toBe(true);
+            expect(testPokemon3.isWeakTo(testPokemon1)).toBe(true);
+        });
     });
 });

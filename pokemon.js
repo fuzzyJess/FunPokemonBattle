@@ -38,12 +38,19 @@ class Pokemon {
     }; 
     
     isEffectiveAgainst(pokemon) {
-        
         if (pokemon.getType() === this.typeRelationship[this.getType()]) {
             return true;
         } else {
             return false;
-        }
+        };
+    };
+
+    isWeakTo(pokemon) {
+        if (this.getType() === this.typeRelationship[pokemon.getType()]) {
+            return true;
+        } else {
+            return false;
+        };
     };
 };
 

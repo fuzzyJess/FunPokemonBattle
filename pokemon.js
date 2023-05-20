@@ -5,6 +5,12 @@ class Pokemon {
     #hitPoints = 0;
     #damage = 0;
     #move = "";
+    typeRelationship = {
+        fire: "grass",
+        water: "fire",
+        grass: "water",
+        normal: "none"
+    };
 
     constructor (name, type = "normal", hp, damage, move = "tackle") {
         this.#name = name;
@@ -32,13 +38,8 @@ class Pokemon {
     }; 
     
     isEffectiveAgainst(pokemon) {
-        const effectiveAgainst = {
-            fire: "grass",
-            water: "fire",
-            grass: "water",
-            normal: "none"
-        };
-        if (pokemon.getType() === effectiveAgainst[this.getType()]) {
+        
+        if (pokemon.getType() === this.typeRelationship[this.getType()]) {
             return true;
         } else {
             return false;

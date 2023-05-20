@@ -29,7 +29,21 @@ class Pokemon {
     };
     getMove() {
         return this.#move;
-    };    
+    }; 
+    
+    isEffectiveAgainst(pokemon) {
+        const effectiveAgainst = {
+            fire: "grass",
+            water: "fire",
+            grass: "water",
+            normal: "none"
+        };
+        if (pokemon.getType() === effectiveAgainst[this.getType()]) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 };
 
 module.exports = { Pokemon };

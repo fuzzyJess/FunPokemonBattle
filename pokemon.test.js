@@ -28,6 +28,13 @@ describe('Pokemon class', () => {
         });
     });
     describe('Methods of Pokemon class', () => {
-
+        test('Pokemon have an isEffectiveAgainst method', () => {
+            const testPokemon1 = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
+            const testPokemon2 = new Pokemon('Flareon', 'fire', 55, 18, 'Fire blast');
+            const testPokemon3 = new Pokemon('Vaporeon', 'water', 70, 19, 'hydro pump');
+            expect(testPokemon2.isEffectiveAgainst(testPokemon1)).toBe(true);
+            expect(testPokemon3.isEffectiveAgainst(testPokemon2)).toBe(true);
+            expect(testPokemon1.isEffectiveAgainst(testPokemon2)).toBe(false);
+        });
     });
 });

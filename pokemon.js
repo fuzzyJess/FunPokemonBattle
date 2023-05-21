@@ -61,6 +61,11 @@ class Pokemon {
         console.log(`${this.getName()} used ${this.getMove()}`)
         return this.getDamage();
     };
+
+    hasFainted() {
+        let health = this.getHitPoints();
+        return health <= 0;
+    }
 };
 
 module.exports = { Pokemon };

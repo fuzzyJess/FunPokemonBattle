@@ -55,5 +55,12 @@ describe('Pokemon class', () => {
             const testPokemon2 = new Pokemon('Flareon', 'fire', 55, 18, 'Fire blast');
             expect(testPokemon2.useMove()).toBe(18);
         });
+        test('Pokemon have a hasFainted method', () => {
+            const testPokemon = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
+            testPokemon.takeDamage(45);
+            expect(testPokemon.hasFainted()).toBe(false);
+            testPokemon.takeDamage(20);
+            expect(testPokemon.hasFainted()).toBe(true);
+        });
     });
 });

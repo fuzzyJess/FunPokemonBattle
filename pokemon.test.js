@@ -1,4 +1,5 @@
 const { Pokemon } = require('./pokemon');
+const { PokemonType } = require('./pokemon-type');
 
 describe('Pokemon class', () => {
     describe('Properties of Pokemon class', () => {
@@ -62,5 +63,15 @@ describe('Pokemon class', () => {
             testPokemon.takeDamage(20);
             expect(testPokemon.hasFainted()).toBe(true);
         });
+    });
+});
+
+describe('PokemonType class', () => {
+    describe('Properties of PokemonType class', () => {
+
+    });
+
+    describe('Methods of PokemonType class', () => {
+
     });
 });

@@ -52,6 +52,10 @@ class Pokemon {
             return false;
         };
     };
+
+    takeDamage(damage) {
+        this.#hitPoints -= damage;
+    };
 };
 
 module.exports = { Pokemon };

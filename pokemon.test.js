@@ -44,5 +44,10 @@ describe('Pokemon class', () => {
             expect(testPokemon2.isWeakTo(testPokemon3)).toBe(true);
             expect(testPokemon3.isWeakTo(testPokemon1)).toBe(true);
         });
+        test('Pokemon have a takeDamage method', () => {
+            const testPokemon1 = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
+            testPokemon1.takeDamage(20);
+            expect(testPokemon1.getHitPoints()).toBe(45);
+        });
     });
 });

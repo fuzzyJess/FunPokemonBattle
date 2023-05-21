@@ -11,7 +11,8 @@ class WaterType extends Pokemon {
 };
 
 class GrassType extends Pokemon {
-
+    isWeakTo = "fire";
+    isEffectiveAgainst = "water";
 };
 
 module.exports = { FireType, WaterType, GrassType };

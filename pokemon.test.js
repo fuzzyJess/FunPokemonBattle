@@ -1,5 +1,5 @@
 const { Pokemon } = require('./pokemon');
-const { FireType, WaterType } = require('./pokemon-type');
+const { FireType, WaterType, GrassType } = require('./pokemon-type');
 
 describe('Pokemon class', () => {
     describe('Properties of Pokemon class', () => {
@@ -85,6 +85,16 @@ describe('PokemonType class', () => {
         test('WaterType Pokemon have isWeakTo property', () => {
             const testPokemon = new WaterType('Vaporeon', 'water', 70, 19, 'hydro pump');
             expect(testPokemon.isWeakTo).toBe('grass');
+        });
+    });
+    describe('Properties of Water Type class', () => {
+        test('GrassType Pokemon have isEffectiveAgainst property', () => {
+            const testPokemon = new GrassType('Leafeon', 'grass', 65, 17, 'Giga drain');
+            expect(testPokemon.isEffectiveAgainst).toBe('water');
+        });
+        test('GrassType Pokemon have isWeakTo property', () => {
+            const testPokemon = new GrassType('Leafeon', 'grass', 65, 17, 'Giga drain');
+            expect(testPokemon.isWeakTo).toBe('fire');
         });
     });
 });

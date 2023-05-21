@@ -56,6 +56,11 @@ class Pokemon {
     takeDamage(damage) {
         this.#hitPoints -= damage;
     };
+
+    useMove() {
+        console.log(`${this.getName()} used ${this.getMove()}`)
+        return this.getDamage();
+    };
 };
 
 module.exports = { Pokemon };

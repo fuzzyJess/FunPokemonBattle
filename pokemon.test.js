@@ -49,5 +49,11 @@ describe('Pokemon class', () => {
             testPokemon1.takeDamage(20);
             expect(testPokemon1.getHitPoints()).toBe(45);
         });
+        test('Pokemon have useMove method', () => {
+            const testPokemon1 = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
+            expect(testPokemon1.useMove()).toBe(17);
+            const testPokemon2 = new Pokemon('Flareon', 'fire', 55, 18, 'Fire blast');
+            expect(testPokemon2.useMove()).toBe(18);
+        });
     });
 });

@@ -1,5 +1,5 @@
 const { Pokemon } = require('./pokemon');
-const { PokemonType } = require('./pokemon-type');
+const { FireType, WaterType } = require('./pokemon-type');
 
 describe('Pokemon class', () => {
     describe('Properties of Pokemon class', () => {
@@ -67,11 +67,24 @@ describe('Pokemon class', () => {
 });
 
 describe('PokemonType class', () => {
-    describe('Properties of PokemonType class', () => {
-
+    describe('Properties of Fire Type class', () => {
+        test('FireType Pokemon have isEffectiveAgainst property', () => {
+            const testPokemon = new FireType('Flareon', 'fire', 55, 18, 'Fire blast');
+            expect(testPokemon.isEffectiveAgainst).toBe('grass');
+        });
+        test('FireType Pokemon have isWeakTo property', () => {
+            const testPokemon = new FireType('Flareon', 'fire', 55, 18, 'Fire blast');
+            expect(testPokemon.isWeakTo).toBe('water');
+        });
     });
-
-    describe('Methods of PokemonType class', () => {
-
+    describe('Properties of Water Type class', () => {
+        test('WaterType Pokemon have isEffectiveAgainst property', () => {
+            const testPokemon = new WaterType('Vaporeon', 'water', 70, 19, 'hydro pump');
+            expect(testPokemon.isEffectiveAgainst).toBe('fire');
+        });
+        test('WaterType Pokemon have isWeakTo property', () => {
+            const testPokemon = new WaterType('Vaporeon', 'water', 70, 19, 'hydro pump');
+            expect(testPokemon.isWeakTo).toBe('grass');
+        });
     });
 });

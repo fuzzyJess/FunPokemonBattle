@@ -1,7 +1,17 @@
 const { Pokemon } = require('./pokemon');
 
-class PokemonType extends Pokemon {
+class FireType extends Pokemon {
+    isWeakTo = "water";
+    isEffectiveAgainst = "grass";
+};
+
+class WaterType extends Pokemon {
+    isWeakTo = "grass";
+    isEffectiveAgainst = "fire";
+};
+
+class GrassType extends Pokemon {
 
 };
 
-module.exports = { PokemonType };
+module.exports = { FireType, WaterType, GrassType };

@@ -1,5 +1,6 @@
 const { Pokemon } = require('./pokemon');
 const { FireType, WaterType, GrassType } = require('./pokemon-type');
+const { Charmander } = require('./pokemon-species')
 
 describe('Pokemon class', () => {
     describe('Properties of Pokemon class', () => {
@@ -66,7 +67,7 @@ describe('Pokemon class', () => {
     });
 });
 
-describe('PokemonType class', () => {
+describe('PokemonType classes', () => {
     describe('Properties of Fire Type class', () => {
         test('FireType Pokemon have isEffectiveAgainst property', () => {
             const testPokemon = new FireType('Flareon', 'fire', 55, 18, 'Fire blast');
@@ -87,7 +88,7 @@ describe('PokemonType class', () => {
             expect(testPokemon.isWeakTo).toBe('grass');
         });
     });
-    describe('Properties of Water Type class', () => {
+    describe('Properties of Grass Type class', () => {
         test('GrassType Pokemon have isEffectiveAgainst property', () => {
             const testPokemon = new GrassType('Leafeon', 'grass', 65, 17, 'Giga drain');
             expect(testPokemon.isEffectiveAgainst).toBe('water');
@@ -95,6 +96,16 @@ describe('PokemonType class', () => {
         test('GrassType Pokemon have isWeakTo property', () => {
             const testPokemon = new GrassType('Leafeon', 'grass', 65, 17, 'Giga drain');
             expect(testPokemon.isWeakTo).toBe('fire');
+        });
+    });
+});
+
+describe('PokemonSpecies classes', () => {
+    describe('Properties of PokemonSpecies classes', () => {
+        test('Charmader has ember as its move', () => {
+            const testPokemon = new Charmander('Toasty');
+            console.log(testPokemon)
+            expect(testPokemon.getType()).toBe('fire');
         });
     });
 });

@@ -38,19 +38,6 @@ describe('Pokemon class', () => {
             testPokemon1.takeDamage(20);
             expect(testPokemon1.hitPoints).toBe(35);
         });
-        test('Pokemon have useMove method', () => {
-            const testPokemon1 = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
-            expect(testPokemon1.useMove()).toBe(17);
-            const testPokemon2 = new Pokemon('Flareon', 'fire', 55, 18, 'Fire blast');
-            expect(testPokemon2.useMove()).toBe(18);
-        });
-        test('Pokemon have a hasFainted method', () => {
-            const testPokemon = new Pokemon('Leafeon', 'grass', 65, 17, 'Giga drain');
-            testPokemon.takeDamage(45);
-            expect(testPokemon.hasFainted()).toBe(false);
-            testPokemon.takeDamage(20);
-            expect(testPokemon.hasFainted()).toBe(true);
-        });
     });
 });
 
@@ -109,7 +96,17 @@ describe('PokemonSpecies classes', () => {
         test('Charmander has a move property', () => {
             const testPokemon = new Charmander('Toasty');
             expect(testPokemon.move).toBe('ember');
-            
+        });
+        test('Charmander has a useMove method', () => {
+            const testPokemon1 = new Charmander('Toasty');
+            expect(testPokemon1.useMove()).toBe(17);
+        });
+        test('Charmander has a hasFainted method', () => {
+            const testPokemon = new Charmander('Toasty');
+            testPokemon.takeDamage(45);
+            expect(testPokemon.hasFainted()).toBe(false);
+            testPokemon.takeDamage(20);
+            expect(testPokemon.hasFainted()).toBe(true);
         });
     });
 });

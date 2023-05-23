@@ -18,26 +18,9 @@ class Pokemon {
         this.type = type;
         this.move = move;
     };
-
-    // methods
-    // getName() {
-    //     return this.#name;
-    // };
-    // getType() {
-    //     return this.#type;
-    // };
-    // getHitPoints() {
-    //     return this.#hitPoints;
-    // };
-    // getDamage() {
-    //     return this.#damage;
-    // };
-    // getMove() {
-    //     return this.#move;
-    // }; 
     
     isEffectiveAgainst(pokemon) {
-        if (pokemon.getType() === this.typeRelationship[this.getType()]) {
+        if (pokemon.type === this.typeRelationship[this.type]) {
             return true;
         } else {
             return false;
@@ -57,12 +40,12 @@ class Pokemon {
     };
 
     useMove() {
-        console.log(`${this.getName()} used ${this.getMove()}`)
-        return this.getDamage();
+        console.log(`${this.name} used ${this.move}`)
+        return this.damage;
     };
 
     hasFainted() {
-        let health = this.getHitPoints();
+        let health = this.hitPoints;
         return health <= 0;
     }
 };

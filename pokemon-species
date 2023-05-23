@@ -1,0 +1,15 @@
+const { Pokemon } = require('./pokemon');
+const { FireType, WaterType, GrassType } = require('./pokemon-type');
+
+class Charmander extends FireType {
+    
+    constructor(name, hitPoints, damage) {
+        super(name, hitPoints, damage)
+        this.hitPoints = 55;
+        this.damage = 17;
+        this.move = 'ember';
+    };
+};
+
+
+module.exports = { Charmander };

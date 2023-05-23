@@ -1,10 +1,11 @@
 class Pokemon {
     // properties
-    #name = "";
-    #type = ""
-    #hitPoints = 0;
-    #damage = 0;
-    #move = "";
+    name = "";
+    type = "";
+    move = "";
+    hitPoints = 0;
+    damage = 0;
+    
     typeRelationship = {
         fire: "grass",
         water: "fire",
@@ -12,30 +13,28 @@ class Pokemon {
         normal: "none"
     };
 
-    constructor (name, type = "normal", hp, damage, move = "tackle") {
-        this.#name = name;
-        this.#type = type;
-        this.#hitPoints = hp;
-        this.#damage = damage;
-        this.#move = move;
+    constructor (name, type = "normal", move = "tackle") {
+        this.name = name;
+        this.type = type;
+        this.move = move;
     };
 
     // methods
-    getName() {
-        return this.#name;
-    };
-    getType() {
-        return this.#type;
-    };
-    getHitPoints() {
-        return this.#hitPoints;
-    };
-    getDamage() {
-        return this.#damage;
-    };
-    getMove() {
-        return this.#move;
-    }; 
+    // getName() {
+    //     return this.#name;
+    // };
+    // getType() {
+    //     return this.#type;
+    // };
+    // getHitPoints() {
+    //     return this.#hitPoints;
+    // };
+    // getDamage() {
+    //     return this.#damage;
+    // };
+    // getMove() {
+    //     return this.#move;
+    // }; 
     
     isEffectiveAgainst(pokemon) {
         if (pokemon.getType() === this.typeRelationship[this.getType()]) {
@@ -46,7 +45,7 @@ class Pokemon {
     };
 
     isWeakTo(pokemon) {
-        if (this.getType() === this.typeRelationship[pokemon.getType()]) {
+        if (this.type === this.typeRelationship[pokemon.type]) {
             return true;
         } else {
             return false;
@@ -54,7 +53,7 @@ class Pokemon {
     };
 
     takeDamage(damage) {
-        this.#hitPoints -= damage;
+        this.hitPoints -= damage;
     };
 
     useMove() {

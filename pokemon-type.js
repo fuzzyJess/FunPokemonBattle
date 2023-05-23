@@ -3,6 +3,11 @@ const { Pokemon } = require('./pokemon');
 class FireType extends Pokemon {
     isWeakTo = "water";
     isEffectiveAgainst = "grass";
+
+    constructor(type) {
+        super(type)
+        this.type = 'fire'
+    }
 };
 
 class WaterType extends Pokemon {

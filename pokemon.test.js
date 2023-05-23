@@ -8,6 +8,13 @@ describe('Pokemon class', () => {
             const testPokemon = new Pokemon('Mareep');
             expect(testPokemon.name).toBe('Mareep');
         });
+        test('Pokemon have a move property', () => {
+            const testPokemon1 = new Pokemon('Ratatta');
+            expect(testPokemon1.move).toBe('tackle');
+            const testPokemon2 = new Pokemon('Vaporeon', 'water', 'hydro pump');
+            expect(testPokemon2.move).toBe('hydro pump');
+        });
+        
     });
     describe('Methods of Pokemon class', () => {
         test('Pokemon have an isEffectiveAgainst method', () => {
@@ -102,10 +109,7 @@ describe('PokemonSpecies classes', () => {
         test('Charmander has a move property', () => {
             const testPokemon = new Charmander('Toasty');
             expect(testPokemon.move).toBe('ember');
-            // const testPokemon1 = new Pokemon('Ratatta', 30, 20);
-            // expect(testPokemon1.getMove()).toBe('tackle');
-            // const testPokemon2 = new Pokemon('Vaporeon', 'water', 70, 19, 'hydro pump');
-            // expect(testPokemon2.getMove()).toBe('hydro pump');
+            
         });
     });
 });

@@ -11,5 +11,14 @@ class Charmander extends FireType {
     };
 };
 
+class Squirtle extends WaterType {
+    
+    constructor(name, hitPoints, damage) {
+        super(name, hitPoints, damage)
+        this.hitPoints = 44;
+        this.damage = 16;
+        this.move = 'water gun';
+    };
+};
 
-module.exports = { Charmander };
+module.exports = { Charmander, Squirtle };

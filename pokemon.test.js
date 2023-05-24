@@ -1,6 +1,6 @@
 const { Pokemon } = require('./pokemon');
 const { FireType, WaterType, GrassType } = require('./pokemon-type');
-const { Charmander } = require('./pokemon-species')
+const { Charmander, Squirtle } = require('./pokemon-species')
 
 describe('Pokemon class', () => {
     describe('Properties of Pokemon class', () => {
@@ -107,6 +107,10 @@ describe('PokemonSpecies classes', () => {
             expect(testPokemon.hasFainted()).toBe(false);
             testPokemon.takeDamage(20);
             expect(testPokemon.hasFainted()).toBe(true);
+        });
+        test('Squirtle has the move water gun', () => {
+            const testPokemon = new Squirtle('Dampy');
+            expect(testPokemon.move).toBe('water gun');
         });
     });
 });

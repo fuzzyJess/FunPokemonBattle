@@ -108,9 +108,12 @@ describe('PokemonSpecies classes', () => {
             testPokemon.takeDamage(20);
             expect(testPokemon.hasFainted()).toBe(true);
         });
-        test('Squirtle has the move water gun', () => {
+        test('Squirtle has the move water gun and correct values for other properties', () => {
             const testPokemon = new Squirtle('Dampy');
             expect(testPokemon.move).toBe('water gun');
+            expect(testPokemon.name).toBe('Dampy');
+            expect(testPokemon.hitPoints).toBe(44);
+            expect(testPokemon.damage).toBe(16);
         });
     });
 });

@@ -21,4 +21,14 @@ class Squirtle extends WaterType {
     };
 };
 
-module.exports = { Charmander, Squirtle };
+class Bulbasaur extends GrassType {
+    
+    constructor(name, hitPoints, damage) {
+        super(name, hitPoints, damage)
+        this.hitPoints = 45;
+        this.damage = 16;
+        this.move = 'vine whip';
+    };
+};
+
+module.exports = { Charmander, Squirtle, Bulbasaur };

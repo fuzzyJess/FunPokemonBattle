@@ -4,8 +4,8 @@ class FireType extends Pokemon {
     isWeakTo = "water";
     isEffectiveAgainst = "grass";
 
-    constructor(type) {
-        super(type)
+    constructor(type, hitPoints) {
+        super(type, hitPoints)
         this.type = 'fire'
     };
 };

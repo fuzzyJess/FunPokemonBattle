@@ -9,12 +9,15 @@ describe('Pokemon class', () => {
             expect(testPokemon.name).toBe('Mareep');
         });
         test('Pokemon have a move property', () => {
-            const testPokemon1 = new Pokemon('Ratatta');
+            const testPokemon1 = new Pokemon('Rattata');
             expect(testPokemon1.move).toBe('tackle');
             const testPokemon2 = new Pokemon('Vaporeon', 'water', 'hydro pump');
             expect(testPokemon2.move).toBe('hydro pump');
         });
-        
+        test('Rattata is a child of the Pokemon class', () => {
+            const testPokemon = new Pokemon('Rattata', 23, 6);
+            expect(testPokemon).toBeInstanceOf(Pokemon);
+        });
     });
     describe('Methods of Pokemon class', () => {
         test('Pokemon have an isEffectiveAgainst method', () => {

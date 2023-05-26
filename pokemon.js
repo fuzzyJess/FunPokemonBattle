@@ -13,10 +13,12 @@ class Pokemon {
         normal: "none"
     };
 
-    constructor (name, type = "normal", move = "tackle") {
+    constructor (name, type = "normal", move = "tackle", hitPoints, damage) {
         this.name = name;
         this.type = type;
         this.move = move;
+        this.hitPoints = hitPoints;
+        this.damage = damage;
     };
     
     isEffectiveAgainst(pokemon) {
